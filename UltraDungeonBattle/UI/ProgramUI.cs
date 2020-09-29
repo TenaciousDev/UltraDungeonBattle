@@ -293,7 +293,7 @@ namespace UltraDungeonBattle
             playerOne.IsTurn = true; //playerOne starts first
             playerTwo.IsTurn = false;
             int round = 0;
-            int roundLimit = 10;
+            int roundLimit = 50;
             while (playerOne.IsAlive != false && playerTwo.IsAlive != false && round < roundLimit)
             {
                 
