@@ -521,14 +521,14 @@ namespace UltraDungeonBattle
         }
         public double WeaponDamageToHealth(string attackerName, string defenderName, Player modHealth)
         {
-            Player oldHealth = GetPlayerByName(attackerName);
+            Player oldHealth = GetPlayerByName(defenderName);
             oldHealth.Health = modHealth.Health;
             modHealth.Health = modHealth.Health - CombatWeapon(attackerName, defenderName);
             return modHealth.Health;
         }
         public double MagicDamageToHealth(string attackerName, string defenderName, Player modHealth)
         {
-            Player oldHealth = GetPlayerByName(attackerName);
+            Player oldHealth = GetPlayerByName(defenderName);
             oldHealth.Health = modHealth.Health;
             modHealth.Health = modHealth.Health - CombatMagic(attackerName, defenderName);
             return modHealth.Health;
