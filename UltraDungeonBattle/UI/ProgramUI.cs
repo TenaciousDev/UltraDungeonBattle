@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using UltraDungeonBattle;
 
@@ -17,13 +18,49 @@ namespace UltraDungeonBattle
         NineSidedDie defend = new NineSidedDie();
         public void Run()
         {
-            //Create the players
+            //Style elements
+            Console.WindowHeight = Console.LargestWindowHeight - 10;
+            Console.WindowWidth = Console.LargestWindowWidth - 100;
+            //Title Screen
+            Console.Title = "ULTRA Dungeon Battle!";
+            string title = @"
+                        +----------------------------------------------------------------+
+                        |----------------------------------------------------------------|
+                        ||                                                              ||
+                        ||                                                              ||
+                        ||                                                              ||
+                        ||                                                              ||
+                        ||                                                              ||
+                        ||                                                              ||
+                        ||                     ULTRA Dungeon Battle!                    ||
+                        ||                                                              ||
+                        ||                       ****************                       ||
+                        ||                     ********************                     ||
+                        ||                                                              ||
+                        ||                           A simple                           ||
+                        ||                         console game                         ||
+                        ||                                                              ||
+                        ||                           *********                          ||
+                        ||                                                              ||
+                        ||                                                              ||
+                        ||    Authors                                                   ||
+                        || +-----------+                                                ||
+                        || |A. Williams|                                                ||
+                        || |A. Metcalf |                                                ||
+                        || +-----------+                                                ||
+                        |----------------------------------------------------------------|
+                        +----------------------------------------------------------------+
+";
+            Console.WriteLine(title);
+            Thread.Sleep(3500);
+            Console.Clear();
             Console.WriteLine("You will need two players for this game. Press any key when ready.");
             Console.ReadKey();
             GameStart();
         }
         private void GameStart()
         {
+            //Create the players
             Console.Clear();
             Console.WriteLine("Player One, create your player! Press any key to continue.");
             Console.ReadKey();
